@@ -1,5 +1,6 @@
 
 package ru.netology.stats;
+
 public class StatsService {
 
     //Сумма продаж сумарно
@@ -20,25 +21,25 @@ public class StatsService {
 
     //Номер месяца, в котором был пик продаж
     public int getMaxMonth(int[] sales) {
-       int maxSales = sales [0];
-       int numberMonth = 0;
-       int maxMonth = 0;
-       for (int saleMonth:sales) {
-           numberMonth += 1;
-           if (saleMonth > maxSales) {
-               maxSales = saleMonth;
-               maxMonth = numberMonth;
-           }
-       }
-       return maxMonth;
+        int maxSales = sales[0];
+        int numberMonth = 0;
+        int maxMonth = 0;
+        for (int saleMonth : sales) {
+            numberMonth += 1;
+            if (saleMonth > maxSales) {
+                maxSales = saleMonth;
+                maxMonth = numberMonth;
+            }
+        }
+        return maxMonth;
     }
 
     //Номер месяца, в котором был минимум продаж
     public int getMinMonth(int[] sales) {
-        int minSales = sales [0];
+        int minSales = sales[0];
         int numberMonth = 0;
         int minMonth = 0;
-        for (int saleMonth:sales) {
+        for (int saleMonth : sales) {
             numberMonth += 1;
             if (saleMonth < minSales) {
                 minSales = saleMonth;
@@ -49,9 +50,9 @@ public class StatsService {
     }
 
     //Кол-во месяцев, в которых продажи были ниже среднего
-    public int getMonthLessAvg(int [] sales) {
+    public int getMonthLessAvg(int[] sales) {
         int monthLessAvg = 0;
-        for (int sale: sales) {
+        for (int sale : sales) {
             if (sale < getAvgSales(sales)) {
                 monthLessAvg += 1;
             }
@@ -60,9 +61,9 @@ public class StatsService {
     }
 
     //Кол-во месяцев, в которых продажи были выше среднего
-    public int getMonthOverAvg(int [] sales) {
+    public int getMonthOverAvg(int[] sales) {
         int monthOverAvg = 0;
-        for (int sale: sales) {
+        for (int sale : sales) {
             if (sale < getAvgSales(sales)) {
                 monthOverAvg += 1;
             }
